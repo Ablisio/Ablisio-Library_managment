@@ -7,7 +7,7 @@ package com.biblioteca.modeloDao;
 
 /**
  *
- * @author Ablisio
+ * @author Huzeif
  */
 import org.hibernate.Session;
 import org.hibernate.Transaction;
