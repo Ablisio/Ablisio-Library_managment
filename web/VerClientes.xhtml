@@ -1,12 +1,55 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Ver Clientes</title>
-    </h:head>
-    <h:body>
-       Em Processo...
-    </h:body>
-</html>
 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>Ver Clientes</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="panel">
+            <h2>Ver Clientes</h2>
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Número de Telefone</th>
+                    <th>Curso</th>
+                     <th>Codigo de Estudante</th>
+                </tr>
+                <ui:repeat value="#{clienteBean.listaClientes}" var="cliente">
+                    <tr>
+                        <td>#{cliente.nome}</td>
+                        <td>#{cliente.email}</td>
+                        <td>#{cliente.telefone}</td>
+                        <td>#{cliente.curso}</td>
+                        <td>#{cliente.codigo}</td>
+                    </tr>
+                </ui:repeat>
+            </table>
+        </div>
+    </h:form>
+</h:body>
+
+</html>
