@@ -1,12 +1,81 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Home Estudante</title>
+        <title>Sistema de Biblioteca</title>
     </h:head>
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .logo {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .navbar-icon {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+
+
+    </style>
     <h:body>
-        Em Processo...
+        <h:form>
+            <p:toolbar>
+                <p:toolbarGroup align="left">
+                    <h:outputLabel styleClass="logo" value="Biblioteca Digital"/>
+                </p:toolbarGroup>
+                <p:toolbarGroup class="a" align="right">
+                    <a href="HomeBibliotecario.xhtml">Home</a>
+                    <a href="MinhaConta.xhtml">MinhaConta</a>
+                    <a href="LoginEstudante.xhtml">LogOut</a>
+                </p:toolbarGroup>
+            </p:toolbar>
+
+
+        </h:form>
+        <h:form>
+            <div class="card-container">
+                <p:commandButton value="Ler Livro"  onclick="location.href = 'LerLivro.xhtml'" styleClass="card">
+
+                </p:commandButton>
+
+                <p:commandButton value="Pedir Livros"  onclick="location.href = 'PedirLivro.xhtml'" styleClass="card">
+
+                </p:commandButton>
+
+                <p:commandButton value="Ver Livros Emprestados"  onclick="location.href = 'VerLivroEmprestado.xhtml'" styleClass="card">
+
+                </p:commandButton>
+            </div>
+           
+        </h:form>
     </h:body>
 </html>
-
