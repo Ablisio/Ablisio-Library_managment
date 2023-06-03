@@ -1,12 +1,71 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Pedido do Livro</title>
-    </h:head>
-    <h:body>
-       Em Processo...
-    </h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>Pedir Livros</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    .search-input {
+        width: 200px;
+        
+    }
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="panel">
+                      <p:commandButton class="voltar" value="Voltar"  onclick="location.href = 'HomeBibliotecario.xhtml'">
+           </p:commandButton>
+            <hr></hr>
+            <h2>Pedir Livros</h2>
+            <hr></hr>
+            <table>
+                
+                <tr>
+                  
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Edição</th>
+                    <th>Editora</th>
+                    <th>Ano de Publicação</th>
+                      <th> <p:inputText placeholder="Pesquisar" styleClass="search-input" />
+        <p:commandButton class="pesquisar" value="Pesquisar"  onclick="location.href = '#'"></p:commandButton></th>
+                </tr>
+                <ui:repeat value="#{livroBean.listaLivros}" var="livro">
+                    <tr>
+                        <td>#{livro.titulo}</td>
+                        <td>#{livro.autor}</td>
+                        <td>#{livro.edicao}</td>
+                        <td>#{livro.editora}</td>
+                        <td>#{livro.anoPublicacao}</td>
+                    </tr>
+                </ui:repeat>
+            </table>
+        </div>
+    </h:form>
+</h:body>
+
 </html>
+
+
 
