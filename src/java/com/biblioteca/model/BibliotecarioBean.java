@@ -7,7 +7,7 @@ package com.biblioteca.model;
 
 /**
  *
- * @author Huzeif
+ * @author ablisio
  */
 public class BibliotecarioBean {
     
