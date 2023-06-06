@@ -7,7 +7,7 @@
 
 /**
  *
- * @author Huzeif
+ * @author ablisio
  */
 package com.biblioteca.model;
 import javax.faces.application.FacesMessage;
