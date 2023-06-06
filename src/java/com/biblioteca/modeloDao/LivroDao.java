@@ -7,7 +7,7 @@ package com.biblioteca.modeloDao;
 
 /**
  *
- * @author Huzeif
+ * @author ablisio
  */
 public class LivroDao {
     
