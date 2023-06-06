@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EmprestimoEditDlg" widgetVar="EmprestimoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEmprestimoTitle}">
+            <h:form id="EmprestimoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{emprestimoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEmprestimoLabel_emprestimoId}" for="emprestimoId" />
+                        <p:inputText id="emprestimoId" value="#{emprestimoController.selected.emprestimoId}" title="#{bundle.EditEmprestimoTitle_emprestimoId}" required="true" requiredMessage="#{bundle.EditEmprestimoRequiredMessage_emprestimoId}"/>
+                        <p:outputLabel value="#{bundle.EditEmprestimoLabel_dataEmprestimo}" for="dataEmprestimo" />
+                        <p:inputText id="dataEmprestimo" value="#{emprestimoController.selected.dataEmprestimo}" title="#{bundle.EditEmprestimoTitle_dataEmprestimo}" />
+                        <p:outputLabel value="#{bundle.EditEmprestimoLabel_dataDevolucaoPrevista}" for="dataDevolucaoPrevista" />
+                        <p:inputText id="dataDevolucaoPrevista" value="#{emprestimoController.selected.dataDevolucaoPrevista}" title="#{bundle.EditEmprestimoTitle_dataDevolucaoPrevista}" />
+                        <p:outputLabel value="#{bundle.EditEmprestimoLabel_dataDevolucaoReal}" for="dataDevolucaoReal" />
+                        <p:inputText id="dataDevolucaoReal" value="#{emprestimoController.selected.dataDevolucaoReal}" title="#{bundle.EditEmprestimoTitle_dataDevolucaoReal}" />
+                        <p:outputLabel value="#{bundle.EditEmprestimoLabel_livroId}" for="livroId" />
+                        <p:selectOneMenu id="livroId" value="#{emprestimoController.selected.livroId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{livroController.itemsAvailableSelectOne}"
+                                           var="livroIdItem"
+                                           itemValue="#{livroIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditEmprestimoLabel_membroId}" for="membroId" />
+                        <p:selectOneMenu id="membroId" value="#{emprestimoController.selected.membroId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{membroController.itemsAvailableSelectOne}"
+                                           var="membroIdItem"
+                                           itemValue="#{membroIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{emprestimoController.update}" value="#{bundle.Save}" update="display,:EmprestimoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EmprestimoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EmprestimoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MembroEditDlg" widgetVar="MembroEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditMembroTitle}">
+            <h:form id="MembroEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{membroController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditMembroLabel_membroId}" for="membroId" />
+                        <p:inputText id="membroId" value="#{membroController.selected.membroId}" title="#{bundle.EditMembroTitle_membroId}" required="true" requiredMessage="#{bundle.EditMembroRequiredMessage_membroId}"/>
+                        <p:outputLabel value="#{bundle.EditMembroLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{membroController.selected.nome}" title="#{bundle.EditMembroTitle_nome}" />
+                        <p:outputLabel value="#{bundle.EditMembroLabel_endereco}" for="endereco" />
+                        <p:inputText id="endereco" value="#{membroController.selected.endereco}" title="#{bundle.EditMembroTitle_endereco}" />
+                        <p:outputLabel value="#{bundle.EditMembroLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{membroController.selected.email}" title="#{bundle.EditMembroTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditMembroLabel_telefone}" for="telefone" />
+                        <p:inputText id="telefone" value="#{membroController.selected.telefone}" title="#{bundle.EditMembroTitle_telefone}" />
+                        <p:outputLabel value="#{bundle.EditMembroLabel_dataInscricao}" for="dataInscricao" />
+                        <p:inputText id="dataInscricao" value="#{membroController.selected.dataInscricao}" title="#{bundle.EditMembroTitle_dataInscricao}" />
+                        <p:outputLabel value="#{bundle.EditMembroLabel_senha}" for="senha" />
+                        <p:inputText id="senha" value="#{membroController.selected.senha}" title="#{bundle.EditMembroTitle_senha}" />
+                        <p:outputLabel value="#{bundle.EditMembroLabel_codigo}" for="codigo" />
+                        <p:inputText id="codigo" value="#{membroController.selected.codigo}" title="#{bundle.EditMembroTitle_codigo}" required="true" requiredMessage="#{bundle.EditMembroRequiredMessage_codigo}"/>
+                        <p:outputLabel value="#{bundle.EditMembroLabel_curso}" for="curso" />
+                        <p:inputText id="curso" value="#{membroController.selected.curso}" title="#{bundle.EditMembroTitle_curso}" required="true" requiredMessage="#{bundle.EditMembroRequiredMessage_curso}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{membroController.update}" value="#{bundle.Save}" update="display,:MembroListForm:datalist,:growl" oncomplete="handleSubmit(args, 'MembroEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="MembroEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

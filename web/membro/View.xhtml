@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MembroViewDlg" widgetVar="MembroViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMembroTitle}">
+            <h:form id="MembroViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{membroController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMembroLabel_membroId}"/>
+                        <h:outputText value="#{membroController.selected.membroId}" title="#{bundle.ViewMembroTitle_membroId}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_nome}"/>
+                        <h:outputText value="#{membroController.selected.nome}" title="#{bundle.ViewMembroTitle_nome}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_endereco}"/>
+                        <h:outputText value="#{membroController.selected.endereco}" title="#{bundle.ViewMembroTitle_endereco}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_email}"/>
+                        <h:outputText value="#{membroController.selected.email}" title="#{bundle.ViewMembroTitle_email}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_telefone}"/>
+                        <h:outputText value="#{membroController.selected.telefone}" title="#{bundle.ViewMembroTitle_telefone}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_dataInscricao}"/>
+                        <h:outputText value="#{membroController.selected.dataInscricao}" title="#{bundle.ViewMembroTitle_dataInscricao}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_senha}"/>
+                        <h:outputText value="#{membroController.selected.senha}" title="#{bundle.ViewMembroTitle_senha}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_codigo}"/>
+                        <h:outputText value="#{membroController.selected.codigo}" title="#{bundle.ViewMembroTitle_codigo}"/>
+                        <h:outputText value="#{bundle.ViewMembroLabel_curso}"/>
+                        <h:outputText value="#{membroController.selected.curso}" title="#{bundle.ViewMembroTitle_curso}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="MembroViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

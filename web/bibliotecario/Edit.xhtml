@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="BibliotecarioEditDlg" widgetVar="BibliotecarioEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditBibliotecarioTitle}">
+            <h:form id="BibliotecarioEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{bibliotecarioController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_bibliotecarioId}" for="bibliotecarioId" />
+                        <p:inputText id="bibliotecarioId" value="#{bibliotecarioController.selected.bibliotecarioId}" title="#{bundle.EditBibliotecarioTitle_bibliotecarioId}" required="true" requiredMessage="#{bundle.EditBibliotecarioRequiredMessage_bibliotecarioId}"/>
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{bibliotecarioController.selected.nome}" title="#{bundle.EditBibliotecarioTitle_nome}" />
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_endereco}" for="endereco" />
+                        <p:inputText id="endereco" value="#{bibliotecarioController.selected.endereco}" title="#{bundle.EditBibliotecarioTitle_endereco}" />
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{bibliotecarioController.selected.email}" title="#{bundle.EditBibliotecarioTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_telefone}" for="telefone" />
+                        <p:inputText id="telefone" value="#{bibliotecarioController.selected.telefone}" title="#{bundle.EditBibliotecarioTitle_telefone}" />
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_dataContratacao}" for="dataContratacao" />
+                        <p:inputText id="dataContratacao" value="#{bibliotecarioController.selected.dataContratacao}" title="#{bundle.EditBibliotecarioTitle_dataContratacao}" />
+                        <p:outputLabel value="#{bundle.EditBibliotecarioLabel_senha}" for="senha" />
+                        <p:inputText id="senha" value="#{bibliotecarioController.selected.senha}" title="#{bundle.EditBibliotecarioTitle_senha}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{bibliotecarioController.update}" value="#{bundle.Save}" update="display,:BibliotecarioListForm:datalist,:growl" oncomplete="handleSubmit(args, 'BibliotecarioEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="BibliotecarioEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

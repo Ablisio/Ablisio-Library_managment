@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="LivroCreateDlg" widgetVar="LivroCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateLivroTitle}">
+            <h:form id="LivroCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{livroController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_livroId}" for="livroId" />
+                        <p:inputText id="livroId" value="#{livroController.selected.livroId}" title="#{bundle.CreateLivroTitle_livroId}" required="true" requiredMessage="#{bundle.CreateLivroRequiredMessage_livroId}"/>
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_titulo}" for="titulo" />
+                        <p:inputText id="titulo" value="#{livroController.selected.titulo}" title="#{bundle.CreateLivroTitle_titulo}" />
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_autor}" for="autor" />
+                        <p:inputText id="autor" value="#{livroController.selected.autor}" title="#{bundle.CreateLivroTitle_autor}" />
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_isbn}" for="isbn" />
+                        <p:inputText id="isbn" value="#{livroController.selected.isbn}" title="#{bundle.CreateLivroTitle_isbn}" />
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_anoPublicacao}" for="anoPublicacao" />
+                        <p:inputText id="anoPublicacao" value="#{livroController.selected.anoPublicacao}" title="#{bundle.CreateLivroTitle_anoPublicacao}" />
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_descricao}" for="descricao" />
+                        <p:inputText id="descricao" value="#{livroController.selected.descricao}" title="#{bundle.CreateLivroTitle_descricao}" />
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_quantidadeDisponivel}" for="quantidadeDisponivel" />
+                        <p:inputText id="quantidadeDisponivel" value="#{livroController.selected.quantidadeDisponivel}" title="#{bundle.CreateLivroTitle_quantidadeDisponivel}" />
+                        <p:outputLabel value="#{bundle.CreateLivroLabel_categoria}" for="categoria" />
+                        <p:inputText id="categoria" value="#{livroController.selected.categoria}" title="#{bundle.CreateLivroTitle_categoria}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{livroController.create}" value="#{bundle.Save}" update="display,:LivroListForm:datalist,:growl" oncomplete="handleSubmit(args,'LivroCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="LivroCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
