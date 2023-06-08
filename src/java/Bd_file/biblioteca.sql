@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
---ablisio
+--
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Maio-2023 às 16:42
+-- Tempo de geração: 07-Jun-2023 às 00:02
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -64,10 +64,18 @@ CREATE TABLE `livro` (
   `autor` varchar(255) DEFAULT NULL,
   `isbn` varchar(13) DEFAULT NULL,
   `ano_publicacao` int(11) DEFAULT NULL,
-  `descricao` text DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   `quantidade_disponivel` int(11) DEFAULT NULL,
   `categoria` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `livro`
+--
+
+INSERT INTO `livro` (`livro_id`, `titulo`, `autor`, `isbn`, `ano_publicacao`, `descricao`, `quantidade_disponivel`, `categoria`) VALUES
+(23, 'Ablisio', 'Sarmento', 'ISGB', 2000, 'Mata', 2, 'ROmance'),
+(8090, 'Liocalda', 'Deus', 'Ablisio', 2023, '2330', 2330, 'ROmance');
 
 -- --------------------------------------------------------
 
@@ -82,8 +90,17 @@ CREATE TABLE `membro` (
   `email` varchar(255) DEFAULT NULL,
   `telefone` varchar(20) DEFAULT NULL,
   `data_inscricao` varchar(255) DEFAULT NULL,
-  `senha` varchar(255) DEFAULT NULL
+  `senha` varchar(255) DEFAULT NULL,
+  `codigo` int(255) NOT NULL,
+  `curso` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `membro`
+--
+
+INSERT INTO `membro` (`membro_id`, `nome`, `endereco`, `email`, `telefone`, `data_inscricao`, `senha`, `codigo`, `curso`) VALUES
+(2330, 'Ablisio', 'Manhica', 'amussuane@gmail.com', '842306947', '2330', '2330', 2330, 'ISD3A');
 
 --
 -- Índices para tabelas despejadas
