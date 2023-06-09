@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Adicionar Membro</title>
+</h:head>
+<h:body>
+    <h:form>
+        <p:panel header="Adicionar Membro">
+            <h:panelGrid columns="2">
+                <p:outputLabel for="nome" value="Nome:" />
+                <p:inputText id="nome" value="#{MembroBean.nome}" required="true" />
+
+                <p:outputLabel for="endereco" value="Endereço:" />
+                <p:inputText id="endereco" value="#{MembroBean.endereco}" required="true" />
+
+                <p:outputLabel for="email" value="Email:" />
+                <p:inputText id="email" value="#{MembroBean.email}" required="true" />
+
+                <p:outputLabel for="telefone" value="Telefone:" />
+                <p:inputText id="telefone" value="#{MembroBean.telefone}" required="true" />
+
+                <p:outputLabel for="dataInscricao" value="Data de Inscrição:" />
+                <p:calendar id="dataInscricao" value="#{MembroBean.dataInscricao}" pattern="yyyy-MM-dd" required="true" />
+
+                <p:outputLabel for="senha" value="Senha:" />
+                <p:inputText id="senha" value="#{MembroBean.senha}" required="true" />
+            </h:panelGrid>
+
+            <p:commandButton value="Adicionar" action="#{MembroBean.adicionarMembro}" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
+
+
