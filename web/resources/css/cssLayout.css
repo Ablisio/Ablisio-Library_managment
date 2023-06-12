@@ -4,6 +4,7 @@
     background-color: #036fab;
     color: white;
     padding: 5px;
+    height: 100px;
     margin: 0px 0px 10px 0px;
 }
 
@@ -11,6 +12,7 @@
     position: relative;
     background-color: #c2dfef;
     padding: 5px;
+    height: 100px;
     margin: 10px 0px 0px 0px;
 }
 
@@ -18,6 +20,7 @@
     float: left;
     background-color: #ece3a5;
     padding: 5px;
+    height: 400px;
     width: 150px;
 }
 
@@ -37,6 +40,7 @@
 .left_content {
     background-color: #dddddd;
     padding: 5px;
+        height: 400px;
     margin-left: 170px;
 }
 
