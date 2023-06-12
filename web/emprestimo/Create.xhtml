@@ -33,6 +33,7 @@
                                            itemValue="#{membroIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
+                    
                     <p:commandButton actionListener="#{emprestimoController.create}" value="#{bundle.Save}" update="display,:EmprestimoListForm:datalist,:growl" oncomplete="handleSubmit(args,'EmprestimoCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="EmprestimoCreateDialog.hide()"/>
                 </h:panelGroup>

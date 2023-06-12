@@ -69,42 +69,25 @@ and open the template in the editor.
     <h:body>
         <h:form id="registrationForm">
             <div class="container">
-                <h2>Registro Estudante</h2>
+                <h2>Login Bibliotecario</h2>
                 <div class="form-group">
                     <p:outputLabel for="nome" value="Nome:" />
-                    <p:inputText id="nome" value="#{MembroBean.nome}" required="true" />
-                </div>
-                <div class="form-group">
-
-                    <p:outputLabel for="endereco" value="Endereço:" />
-                    <p:inputText id="endereco" value="#{MembroBean.endereco}" required="true" />
+                    <p:inputText id="nome" value="#{BibliotecarioBean.nome}" required="true" />
                 </div>
                 <div class="form-group">
                     <p:outputLabel for="email" value="Email:" />
-                    <p:inputText id="email" value="#{MembroBean.email}" required="true" />
+                    <p:inputText id="email" value="#{BibliotecarioBean.email}" required="true" />
                 </div>
-                <div class="form-group">
-
-                    <p:outputLabel for="telefone" value="Telefone:" />
-                    <p:inputText id="telefone" value="#{MembroBean.telefone}" required="true" />
-                </div>
-                <div class="form-group">
-                    <p:outputLabel for="dataInscricao" value="Data de Inscrição:" />
-                    <p:calendar id="dataInscricao" value="#{MembroBean.dataInscricao}" pattern="yyyy-MM-dd" required="true" />
-                </div>
-
                 <div class="form-group">
                     <p:outputLabel for="senha" value="Senha:" />
-                    <p:inputText id="senha" value="#{MembroBean.senha}" required="true" />
+                    <p:inputText id="senha" value="#{BibliotecarioBean.senha}" required="true" />
                 </div>
 
                 <div class="form-group">
-                    <p:commandButton value="Adicionar" action="#{MembroBean.adicionarMembro}" />
-                    <h4>Já possui uma conta? Faça <h:outputLink value="LoginCliente.xhtml">Login</h:outputLink></h4>
+                    <p:commandButton value="Adicionar" action="#{BibliotecarioBean.adicionarBibliotecario}" />
+                    <h4>Se nao possui uma conta? Faça <h:outputLink value="InicioRegistrarBibliotecario.xhtml">Registrar</h:outputLink></h4>
                 </div>
             </div>
         </h:form>
     </h:body>
 </html>
-
-

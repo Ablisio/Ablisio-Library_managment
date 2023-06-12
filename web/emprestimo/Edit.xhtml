@@ -35,6 +35,7 @@
                                            itemValue="#{membroIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
+                    
                     <p:commandButton actionListener="#{emprestimoController.update}" value="#{bundle.Save}" update="display,:EmprestimoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EmprestimoEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="EmprestimoEditDialog.hide()"/>
                 </h:panelGroup>

@@ -26,7 +26,7 @@
                         <p:inputText id="dataContratacao" value="#{bibliotecarioController.selected.dataContratacao}" title="#{bundle.EditBibliotecarioTitle_dataContratacao}" />
                         <p:outputLabel value="#{bundle.EditBibliotecarioLabel_senha}" for="senha" />
                         <p:inputText id="senha" value="#{bibliotecarioController.selected.senha}" title="#{bundle.EditBibliotecarioTitle_senha}" />
-                    </p:panelGrid>
+                    </p:panelGrid>          
                     <p:commandButton actionListener="#{bibliotecarioController.update}" value="#{bundle.Save}" update="display,:BibliotecarioListForm:datalist,:growl" oncomplete="handleSubmit(args, 'BibliotecarioEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="BibliotecarioEditDialog.hide()"/>
                 </h:panelGroup>

@@ -81,6 +81,7 @@
                             </f:facet>
                             <h:outputText value="#{item.curso}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{membroController.prepareCreate}" update=":MembroCreateForm" oncomplete="PF('MembroCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":MembroViewForm" oncomplete="PF('MembroViewDialog').show()" disabled="#{empty membroController.selected}"/>

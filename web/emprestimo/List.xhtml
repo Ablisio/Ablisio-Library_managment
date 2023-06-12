@@ -63,6 +63,7 @@
                             </f:facet>
                             <h:outputText value="#{item.membroId}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{emprestimoController.prepareCreate}" update=":EmprestimoCreateForm" oncomplete="PF('EmprestimoCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EmprestimoViewForm" oncomplete="PF('EmprestimoViewDialog').show()" disabled="#{empty emprestimoController.selected}"/>

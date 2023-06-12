@@ -31,6 +31,7 @@
                         <p:outputLabel value="#{bundle.EditMembroLabel_curso}" for="curso" />
                         <p:inputText id="curso" value="#{membroController.selected.curso}" title="#{bundle.EditMembroTitle_curso}" required="true" requiredMessage="#{bundle.EditMembroRequiredMessage_curso}"/>
                     </p:panelGrid>
+                    
                     <p:commandButton actionListener="#{membroController.update}" value="#{bundle.Save}" update="display,:MembroListForm:datalist,:growl" oncomplete="handleSubmit(args, 'MembroEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="MembroEditDialog.hide()"/>
                 </h:panelGroup>

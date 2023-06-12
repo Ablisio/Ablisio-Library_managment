@@ -63,12 +63,14 @@
                             </f:facet>
                             <h:outputText value="#{item.dataContratacao}"/>
                         </p:column>
+                        
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListBibliotecarioTitle_senha}"/>
                             </f:facet>
                             <h:outputText value="#{item.senha}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{bibliotecarioController.prepareCreate}" update=":BibliotecarioCreateForm" oncomplete="PF('BibliotecarioCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":BibliotecarioViewForm" oncomplete="PF('BibliotecarioViewDialog').show()" disabled="#{empty bibliotecarioController.selected}"/>

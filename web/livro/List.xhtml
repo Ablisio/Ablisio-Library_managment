@@ -75,6 +75,7 @@
                             </f:facet>
                             <h:outputText value="#{item.categoria}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{livroController.prepareCreate}" update=":LivroCreateForm" oncomplete="PF('LivroCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":LivroViewForm" oncomplete="PF('LivroViewDialog').show()" disabled="#{empty livroController.selected}"/>

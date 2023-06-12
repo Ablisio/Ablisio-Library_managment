@@ -29,6 +29,7 @@
                         <p:outputLabel value="#{bundle.CreateLivroLabel_categoria}" for="categoria" />
                         <p:inputText id="categoria" value="#{livroController.selected.categoria}" title="#{bundle.CreateLivroTitle_categoria}" />
                     </p:panelGrid>
+                    
                     <p:commandButton actionListener="#{livroController.create}" value="#{bundle.Save}" update="display,:LivroListForm:datalist,:growl" oncomplete="handleSubmit(args,'LivroCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="LivroCreateDialog.hide()"/>
                 </h:panelGroup>

@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Tela de Início</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(#21D4FD, #efeeef);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 5;
+            }
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .wrapper {
+            width: 200px;
+            height: 60px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 15%;
+            transform-origin: 50%;
+            animation: circle .5s alternate infinite ease;
+        }
+
+        @keyframes circle {
+            0% {
+                top: 60px;
+                height: 5px;
+                border-radius: 50px 50px 25px 25px;
+                transform: scaleX(1.7);
+            }
+
+            40% {
+                height: 20px;
+                border-radius: 50%;
+                transform: scaleX(1);
+            }
+
+            100% {
+                top: 0%;
+            }
+        }
+
+        .circle:nth-child(2) {
+            left: 45%;
+            animation-delay: .2s;
+        }
+
+        .circle:nth-child(3) {
+            left: auto;
+            right: 15%;
+            animation-delay: .3s;
+        }
+
+        .shadow {
+            width: 20px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, .5);
+            position: absolute;
+            top: 62px;
+            transform-origin: 50%;
+            z-index: -1;
+            left: 15%;
+            filter: blur(1px);
+            animation: shadow .5s alternate infinite ease;
+        }
+
+        @keyframes shadow {
+            0% {
+                transform: scaleX(1.5);
+            }
+
+            40% {
+                transform: scaleX(1);
+                opacity: .7;
+            }
+
+            100% {
+                transform: scaleX(.2);
+                opacity: .4;
+            }
+        }
+
+        .shadow:nth-child(4) {
+            left: 45%;
+            animation-delay: .2s
+        }
+
+        .shadow:nth-child(5) {
+            left: auto;
+            right: 15%;
+            animation-delay: .3s;
+        }
+
+        .wrapper span {
+            position: absolute;
+            top: 75px;
+            font-family: 'Lato';
+            font-size: 20px;
+            letter-spacing: 12px;
+            color: #fff;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:outputStylesheet library="primefaces" name="layout/layout.css" />
+        <h:outputScript library="primefaces" name="jquery/jquery.js" />
+        <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" />
+
+        <h:panelGroup layout="block" styleClass="container">
+            <h1>Biblioteca Digital</h1>
+            <p>Bem-vindo à nossa biblioteca digital!</p>
+            <h:commandLink styleClass="btn" value="Explore nossa coleção como..." action="InicioRegistrarBibliotecario.xhtml"  />
+        </h:panelGroup>
+
+        <h:panelGroup layout="block" styleClass="wrapper">
+            <h:panelGroup layout="block" styleClass="circle" />
+            <h:panelGroup layout="block" styleClass="circle" />
+            <h:panelGroup layout="block" styleClass="circle" />
+
+            <h:panelGroup layout="block" styleClass="shadow" />
+            <h:panelGroup layout="block" styleClass="shadow" />
+            <h:panelGroup layout="block" styleClass="shadow" />
+        </h:panelGroup>
+    </h:form>
+</h:body>
+
+</html>
