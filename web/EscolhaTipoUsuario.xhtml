@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Escolha</title>
+    <style>
+        .choice-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .choice-card {
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .choice-card:hover {
+            background-color: #ebebeb;
+        }
+
+        .choice-card h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <div class="choice-container">
+        <div class="choice-card" onclick="location.href='InicioRegistrarCliente.xhtml'">
+            <h2>Entrar como Cliente</h2>
+        </div>
+        <div class="choice-card" onclick="location.href='InicioRegistrarBibliotecario.xhtml'">
+            <h2>Entrar como Bibliotecário</h2>
+        </div>
+    </div>
+</h:body>
+
+</html>

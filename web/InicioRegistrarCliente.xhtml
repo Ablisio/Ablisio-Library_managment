@@ -69,7 +69,7 @@ and open the template in the editor.
     <h:body>
         <h:form id="registrationForm">
             <div class="container">
-                <h2>Registro Estudante</h2>
+                <h2>Registro Cliente</h2>
                 <div class="form-group">
                     <p:outputLabel for="nome" value="Nome:" />
                     <p:inputText id="nome" value="#{MembroBean.nome}" required="true" />
@@ -99,7 +99,7 @@ and open the template in the editor.
                 </div>
 
                 <div class="form-group">
-                    <p:commandButton value="Adicionar" action="#{MembroBean.adicionarMembro}" />
+                    <p:commandButton value="Adicionar" onclick="location.href='newTemplateClient.xhtml'" />
                     <h4>Já possui uma conta? Faça <h:outputLink value="LoginCliente.xhtml">Login</h:outputLink></h4>
                 </div>
             </div>
